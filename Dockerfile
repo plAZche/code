@@ -1,4 +1,5 @@
 FROM alpine:3.10
+RUN apk add --no-cache bash
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
