@@ -1,4 +1,4 @@
-FROM yunohost/dev:latest
+FROM plAZche/yunohost_dockerization:latest
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
