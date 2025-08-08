@@ -1,4 +1,4 @@
-FROM plAZche/yunohost_dockerization:latest
+FROM alpine:3.10
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
