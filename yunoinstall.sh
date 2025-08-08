@@ -297,10 +297,10 @@ function check_assertions()
     fi
 
     # Check we aren't running in docker or other weird containers that we can't probably install on
-    if systemd-detect-virt | grep -q -w "docker\|container-other" && [[ "$FORCE" != "true" ]]; then
-        error "It seems like you are trying to install YunoHost in docker or a weird container technology which probably is not supported by this install script (or YunoHost as a whole). If you know what you are doing, you can run this script with -f."
-        return 1
-    fi
+    # if systemd-detect-virt | grep -q -w "docker\|container-other" && [[ "$FORCE" != "true" ]]; then
+    #     error "It seems like you are trying to install YunoHost in docker or a weird container technology which probably is not supported by this install script (or YunoHost as a whole). If you know what you are doing, you can run this script with -f."
+    #     return 1
+    # fi
     # Check possible conflict with apache, bind9.
     if dpkg --get-selections | grep -v deinstall | grep -q 'bind9\s' && [[ "$FORCE" != "true" ]]; then
         error "Bind9 is installed on your system. Yunohost conflicts with Bind9 because it requires dnsmasq. To be able to run this script, you should first run 'apt remove bind9 --purge --autoremove'."
