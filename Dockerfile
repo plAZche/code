@@ -2,6 +2,6 @@ FROM alpine:3.10
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
-RUN apt update && apt install -y curl ca-certificates
+RUN apk update && apk add --no-cache curl
 RUN chmod +x /app/code/yunoinstall.sh
 CMD [ "/app/code/yunoinstall.sh" ]
