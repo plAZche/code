@@ -1,4 +1,4 @@
-FROM yunohost/dev
+FROM yunohost/dev:latest
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
