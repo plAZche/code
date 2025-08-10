@@ -552,6 +552,7 @@ function setup_package_source() {
 
     # Add YunoHost repository key to the keyring
     curl --fail --silent https://forge.yunohost.org/yunohost_bookworm.asc | gpg --dearmor > /usr/share/keyrings/yunohost-bookworm.gpg
+    echo "deb [trusted=yes] http://repo.yunohost.org/debian bookworm stable" > /etc/apt/sources.list.d/yunohost.list
     apt_update
 }
 
