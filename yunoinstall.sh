@@ -225,7 +225,7 @@ function apt_update() {
 }
 
 function apt_install() {
-    DEBIAN_FRONTEND=noninteractive _apt install --assume-yes -o Dpkg::Options::="--force-confold" "$@"
+    _apt install --assume-yes -o Dpkg::Options::="--force-confold" "$@"
 }
 
 ###############################################################################
