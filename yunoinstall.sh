@@ -589,11 +589,13 @@ EOF
     # Install YunoHost
     # FIXME : do we still want to install recommends ?
     apt_install                              \
-        -o APT::install-recommends=true      \
+    
         yunohost yunohost-admin postfix      \
     || return 1
 
 }
+
+#-o APT::install-recommends=true      \
 
 function conclusion() {
     # Get first local IP and global IP
