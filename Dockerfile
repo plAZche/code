@@ -5,7 +5,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN mkdir -p /app/code
 COPY . /app/code
 WORKDIR /app/code
-RUN apt update && apt install -y ca-certificates curl iputils-ping systemd nginx postfix fail2ban slapd && \
+RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y ca-certificates curl iputils-ping nginx postfix fail2ban slapd && \
     update-ca-certificates && \
     rm -rf /var/lib/apt/lists/* && \
     chmod +x /app/code/yunoinstall.sh
