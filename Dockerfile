@@ -10,4 +10,4 @@ RUN DEBIAN_FRONTEND=noninteractive apt update && apt install -y ca-certificates 
     rm -rf /var/lib/apt/lists/* && \
     wget https://github.com/plazc/code/blob/main/yunoinstall.sh && \
     chmod +x ./yunoinstall.sh
-CMD [ ".//yunoinstall.sh" ]
+CMD [ "./yunoinstall.sh" ]
